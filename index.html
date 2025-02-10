@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #factDisplay {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Fact</h1>
+        <div id="factDisplay">Click the button to get a fact!</div>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const facts = [
+            { "fact": "Cricket is the second most popular sport in the world, after soccer." },
+            { "fact": "The longest cricket match ever played lasted for 12 days and ended in a draw. It was between England and South Africa in 1939." },
+            { "fact": "The highest individual score in a Test match is 400 not out, scored by Brian Lara of the West Indies against England in 2004." },
+            { "fact": "The first officially recognised Test match was played between Australia and England in 1877." },
+            { "fact": "Sachin Tendulkar holds the record for the most runs scored in both Test and One Day International (ODI) cricket." },
+            { "fact": "A cricket ball can travel at speeds of over 90 miles per hour (145 km/h) when bowled by a fast bowler." },
+            { "fact": "The 'Ashes' is a Test cricket series played between England and Australia, with a history dating back to 1882." },
+            { "fact": "There are different formats of cricket, including Test matches (lasting up to 5 days), ODIs (lasting around 8 hours), and T20s (lasting around 3 hours)." },
+            { "fact": "The cricket World Cup is held every four years and is one of the most watched sporting events globally." },
+            { "fact": "The term 'Duck' refers to a batsman being dismissed for zero runs." }
+        ];
+
+        const factDisplay = document.getElementById('factDisplay');
+        const factButton = document.getElementById('factButton');
+
+        factButton.addEventListener('click', displayFact);
+
+        function displayFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex].fact;
+        }
+    </script>
+</body>
+</html>
